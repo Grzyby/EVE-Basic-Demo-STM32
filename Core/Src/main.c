@@ -132,12 +132,12 @@ int main(void)
   MX_SPI1_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-  FT81x_Init(DISPLAY_50, BOARD_EVE2, TOUCH_TPC);
+  FT81x_Init(DISPLAY_50, BOARD_EVE2, TOUCH_TPR);
 
   HAL_GPIO_WritePin(LD1_GPIO_Port, LD1_Pin, GPIO_PIN_SET);
-  
+
   MakeScreen_MatrixOrbital(20);
-  if (Display_Touch() == TOUCH_TPC)
+  if (Display_Touch() == TOUCH_TPC || Display_Touch() == TOUCH_TPR)
   {
 	  MakeScreen_Calibrate();
   }
